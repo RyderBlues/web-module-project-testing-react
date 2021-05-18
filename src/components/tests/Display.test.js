@@ -49,6 +49,8 @@ test('Number 6', async ()=> {
     const btn = screen.getByRole("button");
     userEvent.click(btn);
 
+    const show = await screen.findByTestId(/show-container/i);
+    expect(show).toBeInTheDocument();
     expect(fakeFunc).toBeCalledTimes(1);
 })
 
